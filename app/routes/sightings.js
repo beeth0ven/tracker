@@ -14,7 +14,8 @@ export default Ember.Route.extend({
     });
     let record3 = this.store.createRecord('sighting', {
       location: 'Asilomar',
-      sightedAt: new Date('2016-3-07')
+      sightedAt: new Date('2016-3-07'),
+      isNew: true
     });
     return [record1, record2, record3];
   }
