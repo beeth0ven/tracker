@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       sighting: this.store.createRecord('sighting'),
       cryptids: this.store.findAll('cryptid'),
-      witnesses: this.store.findAll
+      witnesses: this.store.findAll('witness')
     });
   },
   sighting: Ember.computed.alias('controller.model.sighting'),
@@ -17,16 +17,13 @@ export default Ember.Route.extend({
       }
     },
     create() {
-      let self = this;
-      self.get('sighting')
-        .save()
-        .then(function () {
-          self.transitionToRoute('sightings');
-        });
+      this.get('sighting').save().then(() => {
+        this.transitionTo('sightings');
+      });
     },
     cancel() {
       this.get('sighting').deleteRecord();
-      this.transitionToRoute('sightings');
+      this.transitionTo('sightings');
     }
   }
 });

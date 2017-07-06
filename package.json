@@ -38,7 +38,7 @@
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
-    "emberx-select": "3.0.1",
+    "emberx-select": "2.2.3",
     "loader.js": "^4.0.1"
   },
   "dependencies": {
